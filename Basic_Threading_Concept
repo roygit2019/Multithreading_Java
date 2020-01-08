@@ -1,0 +1,24 @@
+class TheMainThread
+{
+	public static void main(String args[])
+	{
+		Thread t;
+		t=Thread.currentThread();
+		System.out.println("The current thread is : "+t);
+		t.setName("changed");
+		System.out.println("The current thread is : "+t);
+		System.out.println("Priority of the thread is : "+t.getPriority());
+		try
+		{
+			for(int i=5;i>=0;i--)
+			{
+				System.out.println(i);
+				Thread.sleep(3000);
+			}
+		}
+		catch(InterruptedException e)
+		{
+			System.out.println("Main Thread interrupted");
+		}
+	}
+}
